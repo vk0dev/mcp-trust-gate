@@ -1,0 +1,30 @@
+{
+  "target": "@playwright/mcp",
+  "packageMetadata": {
+    "name": "@playwright/mcp",
+    "version": "0.0.70",
+    "license": "Apache-2.0",
+    "description": "Playwright Tools for MCP",
+    "homepage": "https://playwright.dev",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/microsoft/playwright-mcp.git"
+    },
+    "bin": {
+      "playwright-mcp": "cli.js"
+    },
+    "keywords": ["mcp", "playwright"],
+    "dependencies": {
+      "playwright": "1.60.0-alpha-1774999321000",
+      "playwright-core": "1.60.0-alpha-1774999321000"
+    },
+    "publishedAt": "2026-04-23T10:58:43.000Z"
+  },
+  "githubRepo": {
+    "fullName": "microsoft/playwright-mcp",
+    "htmlUrl": "https://github.com/microsoft/playwright-mcp",
+    "archived": false,
+    "updatedAt": "2026-04-23T18:40:39Z",
+    "pushedAt": "2026-04-22T22:39:13Z"
+  }
+}

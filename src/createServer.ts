@@ -11,8 +11,9 @@ export function createServer(): McpServer {
     },
     {
       instructions:
-        "TODO: Describe how to use this server effectively. " +
-        "Include which tools to call first and in what order.",
+        "Pre-install trust gate for MCP servers. Use evaluate_install_gate to check an npm MCP package " +
+        "before installing it. Use scan_config to audit all MCP servers in your Claude Code or Claude " +
+        "Desktop config file. Both return GO/REVIEW/BLOCK verdicts with evidence.",
     },
   );
   registerTools(server);

@@ -1,0 +1,33 @@
+{
+  "target": "mcp-remote",
+  "packageMetadata": {
+    "name": "mcp-remote",
+    "version": "0.1.38",
+    "license": "MIT",
+    "description": "Remote proxy for Model Context Protocol, allowing local-only clients to connect to remote servers using oAuth",
+    "homepage": "https://github.com/geelen/mcp-remote#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/geelen/mcp-remote.git"
+    },
+    "bin": {
+      "mcp-remote": "dist/proxy.js",
+      "mcp-remote-client": "dist/client.js"
+    },
+    "keywords": ["mcp", "stdio", "sse", "remote", "oauth"],
+    "dependencies": {
+      "express": "^4.21.2",
+      "open": "^10.1.0",
+      "strict-url-sanitise": "^0.0.1",
+      "undici": "^7.12.0"
+    },
+    "publishedAt": "2026-02-05T23:08:24.000Z"
+  },
+  "githubRepo": {
+    "fullName": "geelen/mcp-remote",
+    "htmlUrl": "https://github.com/geelen/mcp-remote",
+    "archived": false,
+    "updatedAt": "2026-04-23T14:59:29Z",
+    "pushedAt": "2026-02-05T23:21:57Z"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "target": "@modelcontextprotocol/server-filesystem",
+  "packageMetadata": {
+    "name": "@modelcontextprotocol/server-filesystem",
+    "version": "2026.1.14",
+    "license": "MIT",
+    "description": "MCP server for filesystem access",
+    "homepage": "https://modelcontextprotocol.io",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/modelcontextprotocol/servers.git"
+    },
+    "bin": {
+      "mcp-server-filesystem": "dist/index.js"
+    },
+    "keywords": ["mcp", "filesystem"],
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.25.2",
+      "diff": "^5.1.0",
+      "glob": "^10.5.0",
+      "minimatch": "^10.0.1",
+      "zod-to-json-schema": "^3.23.5"
+    },
+    "publishedAt": "2026-01-14T12:03:10.000Z"
+  },
+  "githubRepo": {
+    "fullName": "modelcontextprotocol/servers",
+    "htmlUrl": "https://github.com/modelcontextprotocol/servers",
+    "archived": false,
+    "updatedAt": "2026-04-23T19:22:39Z",
+    "pushedAt": "2026-04-17T22:59:54Z"
+  }
+}

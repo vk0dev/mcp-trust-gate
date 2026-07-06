@@ -23,12 +23,23 @@ async function run() {
   const toolNames = tools.tools.map((t) => t.name).sort();
   console.log("Tools found:", toolNames.join(", "));
 
-  if (toolNames.includes("hello")) {
-    const result = await client.callTool({
-      name: "hello",
-      arguments: { name: "smoke-test" },
-    });
-    console.log("hello result:", result.content[0].text);
+  if (!toolNames.includes("evaluate_install_gate") || !toolNames.includes("scan_config")) {
+    throw new Error("Expected tools evaluate_install_gate and scan_config were not both registered");
+  }
+
+  const result = await client.callTool({
+    name: "evaluate_install_gate",
+    arguments: { package_name: "@playwright/mcp" },
+  });
+
+  if (result.isError) {
+    console.log("evaluate_install_gate returned a structured error (likely network unavailable):", result.content[0].text);
+  } else {
+    const payload = JSON.parse(result.content[0].text);
+    if (!["GO", "REVIEW", "BLOCK"].includes(payload.verdict)) {
+      throw new Error(`Unexpected verdict in evaluate_install_gate response: ${JSON.stringify(payload)}`);
+    }
+    console.log("evaluate_install_gate verdict:", payload.verdict);
   }
 
   console.log("Smoke test PASSED");

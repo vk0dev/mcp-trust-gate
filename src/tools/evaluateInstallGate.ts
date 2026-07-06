@@ -20,7 +20,8 @@ export function registerEvaluateInstallGateTool(server: McpServer): void {
           .string()
           .describe("The npm package name of the MCP server to evaluate, e.g. @playwright/mcp or mcp-remote"),
       },
-      annotations: { readOnlyHint: true },
+      // Writes a fingerprint baseline to disk on every call (see evaluateWithFingerprint) — not read-only.
+      annotations: { readOnlyHint: false },
     },
     async ({ package_name }) => {
       try {

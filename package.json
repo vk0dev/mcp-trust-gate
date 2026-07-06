@@ -24,10 +24,19 @@
     "version-sync": "node scripts/version-sync.mjs"
   },
   "keywords": [
-    "mcp", "mcp-server", "model-context-protocol",
-    "claude", "claude-code", "anthropic",
-    "ai-agent", "developer-tools", "local-first",
-    "security"
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "claude",
+    "claude-code",
+    "anthropic",
+    "ai-agent",
+    "developer-tools",
+    "security",
+    "trust-gate",
+    "install-gate",
+    "mcp-security",
+    "pre-install"
   ],
   "author": "vk0.dev",
   "license": "MIT",

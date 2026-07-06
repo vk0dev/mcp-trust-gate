@@ -1,0 +1,8 @@
+{
+  "name": "mcp-trust-gate",
+  "description": "Pre-install trust gate for MCP servers — GO/REVIEW/BLOCK verdict with evidence",
+  "version": "1.0.0",
+  "npm": "@vk0/mcp-trust-gate",
+  "github": "vk0dev/mcp-trust-gate",
+  "tools": []
+}

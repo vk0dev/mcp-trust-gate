@@ -1,0 +1,58 @@
+{
+  "name": "@vk0/mcp-trust-gate",
+  "version": "1.0.0",
+  "mcpName": "io.github.vk0dev/mcp-trust-gate",
+  "description": "Pre-install trust gate for MCP servers — GO/REVIEW/BLOCK verdict with evidence",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "bin": { "mcp-trust-gate": "./dist/cli.js" },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "smoke": "npm run build && node scripts/dogfood_smoke.mjs",
+    "release-check": "node scripts/release-check.mjs",
+    "version-sync": "node scripts/version-sync.mjs"
+  },
+  "keywords": [
+    "mcp", "mcp-server", "model-context-protocol",
+    "claude", "claude-code", "anthropic",
+    "ai-agent", "developer-tools", "local-first",
+    "security"
+  ],
+  "author": "vk0.dev",
+  "license": "MIT",
+  "homepage": "https://vk0dev.github.io/mcp-trust-gate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vk0dev/mcp-trust-gate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vk0dev/mcp-trust-gate/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.1.0"
+  }
+}

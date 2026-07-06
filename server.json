@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.vk0dev/mcp-trust-gate",
+  "description": "Pre-install trust gate for MCP servers — GO/REVIEW/BLOCK verdict with evidence",
+  "repository": {
+    "url": "https://github.com/vk0dev/mcp-trust-gate",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@vk0/mcp-trust-gate",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

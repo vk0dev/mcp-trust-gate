@@ -1,0 +1,13 @@
+# MCPize manifest - https://mcpize.com
+version: 1
+name: '@vk0/mcp-trust-gate'
+description: >-
+  Pre-install trust gate for MCP servers — GO/REVIEW/BLOCK verdict with evidence
+runtime: typescript
+entry: dist/server.js
+build:
+  install: npm ci
+  command: npm run build
+startCommand:
+  type: stdio
+  command: node dist/server.js

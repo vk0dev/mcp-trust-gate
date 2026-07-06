@@ -1,0 +1,13 @@
+{
+  "name": "@vk0/mcp-trust-gate",
+  "mcpName": "io.github.vk0dev/mcp-trust-gate",
+  "version": "1.0.0",
+  "description": "Pre-install trust gate for MCP servers — GO/REVIEW/BLOCK verdict with evidence",
+  "author": {
+    "name": "vk0.dev",
+    "url": "https://github.com/vk0dev"
+  },
+  "homepage": "https://vk0dev.github.io/mcp-trust-gate",
+  "repository": "https://github.com/vk0dev/mcp-trust-gate",
+  "category": "security"
+}

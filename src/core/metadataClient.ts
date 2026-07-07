@@ -45,6 +45,12 @@ async function cachedFetchJson(
 export class LiveMetadataClient implements MetadataClient {
   async fetchTarget(target: string): Promise<TargetMetadata> {
     const packageMetadata = await this.fetchPackageMetadata(target);
+    if (!packageMetadata) {
+      // npm 404: return a structured unresolvable target so evaluateInstallGate emits a
+      // BLOCK verdict (target_resolvable = fail) instead of throwing.
+      return { target, packageMetadata: undefined, githubRepo: undefined };
+    }
+
     const repositoryUrl = normalizeRepositoryUrl(packageMetadata.repository);
     const githubRepo = repositoryUrl ? await this.tryFetchGitHubRepo(repositoryUrl) : undefined;
 
@@ -55,11 +61,17 @@ export class LiveMetadataClient implements MetadataClient {
     };
   }
 
-  private async fetchPackageMetadata(target: string): Promise<NpmPackageMetadata> {
+  private async fetchPackageMetadata(target: string): Promise<NpmPackageMetadata | undefined> {
     const encodedTarget = encodeURIComponent(target);
     const { ok, status, body } = await cachedFetchJson(`https://registry.npmjs.org/${encodedTarget}/latest`);
 
     if (!ok) {
+      // A 404 means the package genuinely does not exist -> treat as an unresolvable
+      // target (BLOCK) rather than an error. Other statuses (429, 5xx, ...) mean we
+      // could not verify, so keep surfacing them as errors.
+      if (status === 404) {
+        return undefined;
+      }
       throw new TargetResolutionError(target, `npm registry lookup failed with ${status}`);
     }
 

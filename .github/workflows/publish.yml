@@ -20,6 +20,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           cache: "npm"
 
+      - name: Update npm for OIDC trusted publishing
+        run: npm install -g npm@11
+
       - name: Install dependencies
         run: npm ci
 
@@ -35,10 +38,11 @@ jobs:
       - name: MCP client smoke test
         run: npm run smoke
 
-      - name: Publish to npm with provenance
-        run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # 2026-09-13: npm restricted bypass-2FA tokens; publish auth now comes from
+      # OIDC Trusted Publishing (configure once on npmjs package Settings).
+      # provenance is implied by trusted publishing; no token env needed.
+      - name: Publish to npm (OIDC trusted publishing)
+        run: npm publish --access public
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3

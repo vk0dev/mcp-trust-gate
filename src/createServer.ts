@@ -7,7 +7,7 @@ export function createServer(): McpServer {
     {
       name: "mcp-trust-gate",
       version: "1.0.0",
-      description: "Pre-install trust gate for MCP servers — GO/REVIEW/BLOCK verdict with evidence",
+      description: "Pre-install trust gate for MCP servers — returns a GO/REVIEW/BLOCK verdict with evidence before you install",
     },
     {
       instructions:

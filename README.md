@@ -5,6 +5,8 @@ Pre-install trust gate for MCP servers — deterministic GO/REVIEW/BLOCK verdict
 [![npm](https://img.shields.io/npm/v/@vk0/mcp-trust-gate)](https://www.npmjs.com/package/@vk0/mcp-trust-gate)
 [![license](https://img.shields.io/npm/l/@vk0/mcp-trust-gate)](./LICENSE)
 
+[Русский](./README.ru.md) | [日本語](./README.ja.md) | [简体中文](./README.zh-CN.md) | [Español](./README.es.md)
+
 ## Why
 
 MCP servers get real access: your filesystem, your browser, your credentials, your infrastructure. `npm install` doesn't tell you what a server can *do* once an agent starts calling its tools — README marketing copy usually doesn't either. You need that answer **before** the server ever runs, not after something goes wrong.
